@@ -26,7 +26,8 @@ public class T6_ForkJoin {
 	// work from those workers who are busy.
 
 	public static void main(String[] args) {
-		ForkJoinPool pool = new ForkJoinPool(Runtime.getRuntime().availableProcessors());
+		ForkJoinPool pool = new ForkJoinPool(Runtime.getRuntime().availableProcessors());//pool vytvroi tolko runnerov kolko je processorov a dve ulohy budu bezat uplne paralelne na dvoch procesoroch
+		//v praxi by bolo fajn si zistit kolko ma pc processorov a podla toho ist
 		pool.invoke(new MyTask1());
 		pool.invoke(new MyTask2());
 	}

@@ -23,7 +23,8 @@ public class T4_MethodTimeout {
 			Runnable casovoNarocnyBlok = new Runnable() {
 				@Override
 				public void run() {
-				    String fileName = "C:\\tmp\\a.txt";
+				    String fileName = "C:\\tmp\\a.txt";//tato metoda caka na tento subor. Ma nastaveny timeout, ak taky subor existuje hned pokracuje s dalsim kodom dole. Ak sa nedocka, caka nejaky casovy limit, ci tam do priecinka nehodim ten subor, tak sa metoda vyresetuje zrusi a vrati vysledok 0, uz dalej necaka.
+				    //metoda sa neresetuje, resetuje sa vlakno. 
 				    File file = new File(fileName);
 				    FileReader fr = null;
 				    while (fr == null && !timeout) {
@@ -56,7 +57,7 @@ public class T4_MethodTimeout {
 					throw new RuntimeException(e);
 				}
 			}
-			metoda.interrupt();
+			metoda.interrupt();//tuto sa prerusi metoda aj timer - zresetuje sa programove vlakno. Manualne cele toto je strasne zlozite pisat, preto java ma na to automatizovane kniznicu Concurency API, ktora zjednodusuje pracu s vlaknami. Ale stale sa musime vuyhnut dvom zakladnym chybam kt mozu nastat v praci s vlaknami, RaceConditions a Deadlock, aj pri Concurrency kniznici praci
 			timer.interrupt();
 		}
 	}

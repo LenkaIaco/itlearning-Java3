@@ -14,7 +14,7 @@ public class LambdaIntro1 {
 		JFrame f = new JFrame();
 		f.setSize(300, 300);
 		f.setVisible(true);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//operacia abz sa okno neskrzlo ale zavrelo
 
 		JButton b = new JButton("Click");
 		
@@ -23,14 +23,14 @@ public class LambdaIntro1 {
 
 		f.setContentPane(jp);
 		
-		b.addActionListener(new ActionListener() {
+		b.addActionListener(new ActionListener() {//anonzmna vnutorna trieda: ideme konstruktovat interface co nejde ale akobz doplnime praydne telo triedz  + implementacia
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {//aby sme nemuseli triedu manualne overridovat, tak ak trieda (nasa anonymna abstraktna)ma iba jeden parameter, pouzijeme lambdu
 				b.setText(b.getText() + "X");
 			} }
 		);
 		
-//		b.addActionListener(e -> b.setText(b.getText() + "Y")));
+//		b.addActionListener(e -> b.setText(b.getText() + "Y"))); //bud napiseme manualny override metody override ako hore alebo cez lambdu
 
 	}
 

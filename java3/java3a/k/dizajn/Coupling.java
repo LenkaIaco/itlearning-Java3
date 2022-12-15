@@ -1,6 +1,6 @@
 package sk.itlearning.java3.java3a.k.dizajn;
 
-public class Coupling {
+public class Coupling {//prepojenost - Snazime sa aby stavebne kamene medzi sebou neboli zavisle podla moznosti vobec, lebo ked budu interconnected a jedna vec nam vypadne tak cele klbko ppoprepajane programu spadne.
 
 	/*
 	 * Coupling = miera, ktorou zavisia jednotlive casti systemu od seba navzajom.
