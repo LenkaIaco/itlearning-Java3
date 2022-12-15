@@ -1,0 +1,7 @@
+[
+  {"id":12345678, "name":"Volkswagen", "trzby":71000.34},
+  {"id":12345679, "name":"Hyundai", "trzby":51000.34}
+]
+
+GSON je najjednoduchsia kniznica pre pracu s json v jave.
+google gson maven vlozim kus kodu do pomxml a savnem
