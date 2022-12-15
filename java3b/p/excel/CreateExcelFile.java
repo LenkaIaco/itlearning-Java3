@@ -12,7 +12,7 @@ import jxl.write.WriteException;
 public class CreateExcelFile {
 
 	public static void main(String[] args) {
-		String EXCEL_FILE_LOCATION = "C:\\temp\\MyExcel.xls";
+		String EXCEL_FILE_LOCATION = "C:\\temp\\MyExcel.xls";//ak neexistuje folder temp v C vyhodi chybu, inak vytvori excel subor
 		WritableWorkbook myFirstWbook = null;
 		try {
 			myFirstWbook = Workbook.createWorkbook(new File(EXCEL_FILE_LOCATION));
@@ -25,7 +25,7 @@ public class CreateExcelFile {
 		} finally {
 			if (myFirstWbook != null) {
 				try {
-					myFirstWbook.close();
+					myFirstWbook.close();//Writable workbook neimplementuje auto-closable tak tam musoime manualne napisat
 				} catch (IOException | WriteException e) {
 					e.printStackTrace();
 				}

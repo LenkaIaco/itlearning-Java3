@@ -1,5 +1,5 @@
 package sk.itlearning.java3.java3b.n.csv.test;
-
+//genericka trieda, urobim CopyPaste a upravim ju aby fungovala s firmou databazou- FirmaCsvEntity
 import sk.itlearning.java3.java3b.n.csv.core.CsvEntity;
 
 public class DomCsvEntity extends Dom implements CsvEntity<Dom> {
